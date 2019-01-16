@@ -1,0 +1,15 @@
+show dbs
+db.adminCommand( { listDatabases: 1 } )
+use contentdb
+show collections
+show tables
+db.speakers.find()
+db.speakers.find()[0]
+db.speakers.find({"speakerID":1013})
+db.speakers.updateOne(
+   { "speakerID": 1013 },
+   {
+     $set: { "first": "Seymour", "last": "Butts" },
+     $currentDate: { lastModified: true }
+   }
+)
